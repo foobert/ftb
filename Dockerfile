@@ -11,7 +11,7 @@ ADD mods/*.jar /ftb/mods/
 ADD config /ftb/config/
 VOLUME ["/ftb/world"]
 VOLUME ["/config"]
-RUN for i in ops whitelist; do ln -s /ftb/$i.json /config/$i.json; done
+RUN for i in ops whitelist; do ln -s /config/$i.json /ftb/$i.json; done
 EXPOSE 25565
 WORKDIR /ftb
 ENTRYPOINT ["/bin/sh", "ServerStart.sh"]
