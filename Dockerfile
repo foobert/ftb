@@ -9,6 +9,7 @@ RUN cd /ftb && /bin/sh FTBInstall.sh
 RUN echo eula=true > /ftb/eula.txt
 COPY mods/*.jar /ftb/mods/
 COPY config /ftb/config/
+COPY server.properties /ftb/
 VOLUME ["/ftb/world"]
 VOLUME ["/config"]
 RUN for i in ops whitelist; do ln -s /config/$i.json /ftb/$i.json; done
