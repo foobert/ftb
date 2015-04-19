@@ -5,6 +5,8 @@ RUN apt-get -yq install openjdk-7-jre-headless
 RUN mkdir /ftb
 COPY modpacks^FTBInfinity^1_4_1^FTBInfinityServer.zip /ftb/
 RUN cd /ftb && unzip modpacks*.zip
+# Workaround PneumaticCraft crash. NotEnoughKeys is client side!
+RUN cd /ftb && rm mods/NotEnoughKeys*
 RUN cd /ftb && /bin/sh FTBInstall.sh
 RUN echo eula=true > /ftb/eula.txt
 COPY mods/*.jar /ftb/mods/
