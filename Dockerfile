@@ -1,4 +1,4 @@
-FROM java:8-jre-alpine
+FROM java:8-jre
 ADD http://ftb.cursecdn.com/FTB2/modpacks/FTBInfinityEvolvedSkyblock/1_0_4/FTBInfinityEvolvedSkyblockServer.zip /tmp/ftb.zip
 RUN mkdir -p /ftb && cd /ftb && unzip /tmp/ftb.zip && /bin/sh /ftb/FTBInstall.sh
 RUN echo eula=true > /ftb/eula.txt
