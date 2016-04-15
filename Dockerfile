@@ -6,7 +6,7 @@ COPY server.properties /ftb/
 VOLUME ["/ftb/world"]
 VOLUME ["/config"]
 VOLUME ["/ftb/backups"]
-RUN for i in ops whitelist; do ln -s /config/$i.json /ftb/$i.json; done
+RUN for i in ops whitelist banned-players; do ln -s /config/$i.json /ftb/$i.json; done
 EXPOSE 25565
 WORKDIR /ftb
 ENTRYPOINT ["/bin/sh", "ServerStart.sh"]
